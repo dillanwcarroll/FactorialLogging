@@ -64,6 +64,4 @@ namespace Factorialiser.Classes
         public NumberTooHighException(int num) : base("NumberTooHighException: " + num)
         {}
    }
-
-
 }

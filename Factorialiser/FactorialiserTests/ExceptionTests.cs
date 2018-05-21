@@ -57,10 +57,5 @@ namespace FactorialiserTests
             // Assert
             Assert.That(ex.Message.Equals("NullValueException: No Value Entered"));
         }
-
-
-
-
-
     }
 }
