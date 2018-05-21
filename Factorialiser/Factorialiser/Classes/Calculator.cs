@@ -13,10 +13,36 @@ namespace Factorialiser.Classes
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
+        /// 
+        private static NLog.Logger nlogger = NLog.LogManager.GetCurrentClassLogger();
 
         public static int Factorial(int input)
+            
         {
-            throw new NotImplementedException();
+            nlogger.Trace("Calculating: " + input);
+            try
+            {
+                if (input == 1)
+                {
+                    return 1;
+                }
+                else if (input < 1) throw new NumberTooLowException(input);
+                else if (input > 30) throw new NumberTooHighException(input);
+                else
+                {
+                    return input * Factorial(input - 1);
+                }
+            }
+            catch(NumberTooLowException ex)
+            {
+                nlogger.Debug("Input too low: " + input);
+                throw ex;
+            }
+            catch (NumberTooHighException ex)
+            {
+                nlogger.Debug("Input too high: " + input);
+                throw ex;
+            }
 
             // this method should:
 

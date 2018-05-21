@@ -19,7 +19,7 @@ namespace FactorialiserTests
             // assert
             Assert.That(result.Equals(expectedResult));
         }
-
+        //[Ignore ("Debugging")]
         [Test]
         public void Factorial_InputLessThan1_ThrowsNumberTooLowException()
         {
@@ -35,3 +35,4 @@ namespace FactorialiserTests
         }
     }
 }
+ 
